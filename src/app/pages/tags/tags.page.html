@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>gitinfo: recent tags</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset="true">
+    <ion-item *ngFor="let t of tags">
+      {{t.tag_name}}<br>{{t.published_at}}
+    </ion-item>
+  </ion-list>
+</ion-content>

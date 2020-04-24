@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      gitinfo
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,9 +12,43 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <p>gitinfo is a simple app that fetches and displays basic information about public GitHub
+          repositories. Ensure that your URL is in the correct format before continuing. Refer to the
+          URL below as a guide.</p>
+          URL: <ion-input placeholder="https://api.github.com/torvalds/linux" [(ngModel)]="repo"></ion-input>
+          <ion-button (click)="isValid()">Get info</ion-button>
+          <p [hidden]="hideErr">Invalid URL</p>
+          <ion-card button="true" [routerLink]="['/authors']" [hidden]="hideCards">
+            <ion-card-header>
+              <ion-card-title>Authors</ion-card-title>
+              <ion-card-subtitle>View recent authors</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+          <ion-card button="true" [routerLink]="['/commits']" [hidden]="hideCards">
+            <ion-card-header>
+              <ion-card-title>Commits</ion-card-title>
+              <ion-card-subtitle>View recent commits</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+          <ion-card button="true" [routerLink]="['/tags']" [hidden]="hideCards">
+            <ion-card-header>
+              <ion-card-title>Tags</ion-card-title>
+              <ion-card-subtitle>View recent tags</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

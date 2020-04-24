@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>gitinfo: recent commits</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let c of commits">
+      <ion-thumbnail slot="start">
+        <img src={{c.author.avatar_url}}/>
+      </ion-thumbnail>
+      <p slot="start">{{c.commit.author.name}}</p>
+      <p slot="end">{{c.commit.message}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

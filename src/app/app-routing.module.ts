@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'commits',
+    loadChildren: () => import('./pages/commits/commits.module').then( m => m.CommitsPageModule)
+  },
+  {
+    path: 'authors',
+    loadChildren: () => import('./pages/authors/authors.module').then( m => m.AuthorsPageModule)
+  },
+  {
+    path: 'tags',
+    loadChildren: () => import('./pages/tags/tags.module').then( m => m.TagsPageModule)
+  },
 ];
 
 @NgModule({

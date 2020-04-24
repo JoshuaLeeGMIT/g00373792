@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>gitinfo: recent authors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset="true">
+    <ion-item *ngFor="let a of authors">
+      {{a.commit.author.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>

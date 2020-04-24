@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class GitService {
 
   constructor(private http: HttpClient) { }
-
+  /* Get the base repo for checking validity. */
   checkRepo(repo: string): Observable<any> {
     return this.http.get(repo);
   }
